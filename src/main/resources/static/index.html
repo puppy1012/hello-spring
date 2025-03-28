@@ -10,12 +10,18 @@
 <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
     <h1 class="text-3xl font-bold mb-4">Index Page</h1>
     <p class="text-gray-600 mb-6">Welcome to the Index Page!</p>
-    <a href="hello.html" class="inline-block bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 m-2">
-        Go to Hello Page
-    </a>
+
     <a href="about.html" class="inline-block bg-green-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 m-2">
         Go to About Page
     </a>
+    <form action="/hello-mvc.html" method="get">
+        <input type="text" name="name" placeholder="Enter your name"
+               class="border-2 border-gray-300 rounded p-2 w-full mb-4">
+        <button type="submit"
+                class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+            Submit
+        </button>
+    </form>
 </div>
 </body>
 </html>
