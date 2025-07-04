@@ -3,13 +3,17 @@ package hello.hello_spring.service;
 import hello.hello_spring.domain.Member;
 import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.repository.MemberRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class MemberService {
-    private final MemberRepositoryImpl memberRepository;
-    public MemberService(MemberRepositoryImpl memberRepository){
+    private final MemberRepository memberRepository;
+
+    @Autowired
+    public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
     public Long join(Member member) {

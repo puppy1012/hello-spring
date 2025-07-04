@@ -1,9 +1,10 @@
 package hello.hello_spring.repository;
 
 import hello.hello_spring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
-
+@Repository
 public class MemberRepositoryImpl implements MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
@@ -22,13 +23,15 @@ public class MemberRepositoryImpl implements MemberRepository {
 
     @Override
     public Optional<Member> findByName(String name) {
-        return store.values().stream().filter(m -> m.getName().equals(name)).findAny();
+        return store.values().stream().
+                filter(m -> m.getName().equals(name)).findAny();
     }
 
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
+
     @Override
     // ✅ 이 메서드를 직접 추가하세요
     public void clearStore() {
